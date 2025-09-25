@@ -1,0 +1,676 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* Gernal CSS */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    font-family: Poppins;
+    width: 100%;
+    height: 100vh;
+}
+
+a,i{
+    text-decoration: none;
+    user-select: none;
+    outline: none;
+    color:white;
+    font-family:"Poppins";
+}
+a:hover{
+    color:white;
+    color:rgba(177, 176, 176, 0.808)
+}
+
+:root {
+    --primary-color: #ed1354;
+    --secondary-color: #f7f5dd;
+    --lightblack-color: #3d3c3c;
+    --shadow-color: rgba(0, 0, 0, 0.30);
+    --accent-pink: #fff4f4;
+    --sky-blue: #92dce5;
+    --lemon-yellow: #fce77d;
+    --leaf-green: #7ed957;
+    --soft-orange: #ffb347;
+    --text-dark: #295b99ff;
+    --text-light: #e4e4e4;
+    --text-black: #151515;
+    --pinkc: #fff4f4;
+    --navfont-font: "Poppins", sans-serif;
+    --secondary-font: "Roboto", sans-serif;
+    --primary-text: #021832;
+    --secondary-text: #caaa19;
+    --text-white: #fff;
+    --text-gray: #e4e4e4;
+}
+/* Size Classes */
+
+.headingsize {
+	font-size: 2rem;
+}
+
+.subheadingsize {
+	font-size: 1.5rem;
+}
+
+.paratextsize {
+	font-size: 20px;
+}
+
+.subparatextsize {
+	font-size: 1.2rem;
+}
+
+/* Font Weight */
+.fw-1 {
+    font-weight: 500;
+}
+.fw-2{
+    font-weight: 600;
+}
+.fw-3{
+    font-weight: 700;
+}
+
+/* Color Classes */
+.primarycolor{
+    color: var(--primary-color);
+}
+.primarytext{
+    color: var(--primary-text);
+}
+.lightblack{
+    color: var(--lightblack-color);
+}
+
+
+
+
+.coverimg{
+    background: url('../images/aboutCover.jpg') no-repeat center center;
+    background-size: cover;
+    background-position:top;
+    height: 35vw;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.coverimg-text{
+    width: 70vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color:rgba(0, 0, 0, 0.288);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+    padding: 40px 30px;
+}
+.coverimg .coverimg-text h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0px;
+    color: white;
+    text-shadow: 1px 1px 8px black;
+    
+}
+/* All Section Title */
+.section-title{
+    position: relative;
+    margin-bottom: 30px;
+}
+.section-title::after{
+    content: '';
+    position: absolute;
+    bottom:-9px;
+    left: 50%;
+    transform: translateX(-40%);
+    width: 100px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+/* About Radiant Roots */
+.about-description{
+    padding: 40px 30px;
+    text-align: justify;
+}
+.about-description h3{
+    margin-bottom: 20px;
+}
+/* Founder Section */
+.founder {
+	padding: 40px;
+	background: #fff;
+}
+.f-header-mobile{
+    display: none;
+    margin-bottom: 20px;
+}
+.wrap {
+	display: grid;
+	grid-template-columns: 1.1fr 0.9fr;
+	gap: 48px;
+	align-items: center;
+}
+
+@media (max-width:900px) {
+	.wrap {
+		grid-template-columns: 1fr;
+	}
+
+	.media {
+		order: -1;
+	}
+}
+
+.name {
+	margin: 0 0 10px;    
+	color: var(--primary-color);
+}
+
+.kicker {
+	margin-bottom: 10px;
+	color: var(--muted);
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: .2em;
+}
+
+.lead {
+	margin: 0 0 12px;
+    color: var(--text-black);
+}
+
+.bio {
+	margin: 0 0 24px;
+	line-height: 1.7;
+	text-align: justify;
+    color: var(--text-black);
+}
+
+.stats {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(120px, 1fr));
+	gap: 16px;
+}
+
+.stat {
+	background: var(--card);
+	padding: 20px 16px;
+	border-radius: 14px;
+	text-align: center;
+	box-shadow: 0 6px 16px rgba(0, 0, 0, .08);
+}
+
+.stat .num {
+	display: block;
+	font-weight: 800;
+	font-size: clamp(22px, 3.2vw, 36px);
+	color: var(--primary-color);
+	line-height: 1;
+}
+.num::after {
+  content: "+";
+}
+
+
+.stat .label {
+	display: block;
+	margin-top: 8px;
+	font-size: 13px;
+	color: #634b57;
+	letter-spacing: .06em;
+	text-transform: uppercase;
+}
+
+.media {
+	position: relative;
+}
+
+.media img {
+	height: 33vw;
+	border-radius: 18px;
+	box-shadow: 0 12px 28px rgba(0, 0, 0, .18);
+	display: block;
+	margin: 0 auto;
+}
+/*Dream Time Section*/
+.dreamtime-section{
+    padding: 40px 30px;
+}
+.dreamtime-section p{
+    text-align: justify;
+}
+.dreamtime-section> img{
+    display: block;
+    width:35vw;
+    margin:0px auto 25px;
+    border-radius: 10px;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0,0.4));
+     text-align: justify;
+}
+
+/* Mission Vision Section */
+.missionvisiondiv{
+    padding:40px 30px;
+    background: linear-gradient(to right, #e6f0fc54, #f7f0d48a, #fad9f35d); 
+
+}
+.missionvisiondiv h2{
+ margin-bottom: 40px;
+}
+.missionvisiondbtn
+{
+    margin-left: 5%;
+}
+.missionvisiondbtn .btn{
+    box-shadow: 1px 1px 1px 0.6px rgb(131, 131, 131);
+    color: white;
+    font-size: larger;
+    width:10%;
+    font-style:bold;
+    background-color: #ed1354;
+    transition: all 0.4 ease-in;
+}
+
+.missionvisiondbtn .btn:hover{
+    box-shadow:4px 1px 2px 1px rgb(110, 110, 110);
+    color: white;
+    background-color: #ac2950;
+    
+}
+
+.missionvisiondbtn .btn:active{
+    box-shadow:2px 0px 1px 1px rgb(110, 110, 110);
+    color: white;
+    background-color: #d82259;
+}
+
+.vision-mission-content {
+    display: none;
+    margin: 25px auto 7px auto;
+    width: 90%;
+    min-height: 200px;
+    padding: 0px 20px;
+}
+.vision-mission-content p{
+    text-align: justify;
+}
+.active-content {
+    display: block;
+}
+
+
+/* Responsive CSS */
+/* Styles for small devices like phones */
+@media only screen and (max-width: 600px){
+    .headingsize {
+		font-size: 1.4rem;
+	}
+
+	.subheadingsize {
+		font-size: 1rem;
+	}
+
+	.paratextsize {
+		font-size: 0.8rem;
+	}
+
+	.subparatextsize {
+		font-size: 0.5rem;
+	}
+
+	/* Font Weight */
+	.fw-2 {
+		font-weight: 600;
+	}
+
+    /* About Cover Image */
+    .coverimg{
+        height: 35vw;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .coverimg-text{
+        width: 90vw;
+        padding: 20px 14px;
+    }
+    .coverimg .coverimg-text h1 {
+        font-size:15px;
+        text-align: center; 
+    }   
+    .section-title{
+        margin-bottom: 20px;
+    }
+    .section-title::after{
+        width: 50px;
+    }
+    /* Aboout Sectiom */
+    .about-description{
+        padding: 25px 15px;
+    }
+     .about-description > p{
+        padding: 0px 12px   ;
+    }
+    /*Foundersection*/
+    .founder {
+	padding: 20px;
+	background: #fff;
+    }
+    .f-header-mobile{
+        display: block;
+    }
+    .wrap{
+    display:flex;
+    flex-direction: column;
+    gap:24px
+   }
+   .wrap *{
+    width: inherit;
+   }
+   .content .name{
+       display: none;
+    }
+   .content .kicker{
+    display: none;
+   }
+   .content .lead{
+    display: none;
+   }
+
+   .name{
+        margin-bottom: 6px;
+    }
+   .kicker{
+    font-size: 13px;
+    margin-bottom: 6px;
+   }
+   .lead{
+    margin-bottom: 7px;
+   }
+   .bio{
+    margin-bottom: 10px;
+   }
+   .stats {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(60px, 1fr));
+    gap: 5px;
+   }
+   .stat .label {
+    font-size: 10px;
+   }
+   .media img{
+    height: 40vw;
+   }
+   
+    /*Dreamtime-Section*/
+    .dreamtime-section{
+        padding: 25px 15px;
+    }
+    .dreamtime-section> img{
+        width: 70vw;
+    }
+    .dreamtime-section p{
+        padding: 0px 12px;
+        margin-top: 20px;
+    }
+    /*Mision Vision Section*/
+    .missionvisiondiv{
+        padding: 25px 15px;
+    }
+    .vision-mission-content{
+        width: 100%;
+        margin:0px;
+        padding: 0px 15px;
+     }
+    .missionvisiondbtn .btn{
+        width:90px;
+        font-size: 1rem;
+    }
+}    
+
+/* Styles for medium devices like tablets (portrait) */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+    .coverimg{
+        height: 35vw;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .coverimg-text{
+        width: 80vw;
+        padding: 22px 17px;
+    }
+    .coverimg .coverimg-text h1 {
+        font-size:20px;
+        top: 200px;
+        text-align: center;
+    }
+    /* All Sections Padding CSS */
+    .about-description{
+        padding: 25px 15px;
+    }
+    .dreamtime-section{
+        padding: 25px 15px;
+    }
+    .missionvisiondiv{
+        padding: 25px 15px;
+    }
+    /*Foundersection*/
+    .founder {
+	padding: 20px;
+	background: #fff;
+    }
+    .f-header-mobile{
+        display: block;
+    }
+    .wrap{
+    display:flex;
+    flex-direction: column;
+    gap:24px
+   }
+   .wrap *{
+    width: inherit;
+   }
+   .content .name{
+       display: none;
+    }
+   .content .kicker{
+    display: none;
+   }
+   .content .lead{
+    display: none;
+   }
+   
+   .name{
+        margin-bottom: 6px;
+    }
+   .kicker{
+    font-size: 13px;
+    margin-bottom: 6px;
+   }
+   .lead{
+    margin-bottom: 7px;
+   }
+   .bio{
+    margin-bottom: 10px;
+   }
+   .stats {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(60px, 1fr));
+    gap: 5px;
+   }
+   .stat .label {
+    font-size: 10px;
+   }
+   .media img{
+    height: 40vw;
+   }
+    /* Mission Vision CSS */
+    .missionvisiondbtn .btn{
+        width:100px;
+    }
+
+    /* Text Sizes */
+    .headingsize{
+        font-size:1.4rem;
+    }
+    .subheadingsize{
+        font-size: 1rem;
+    }
+    .paratextsize{
+        font-size: 0.8rem;
+    }
+    .subparatextsize{
+        font-size: 0.5rem;
+    }
+    /* Font Weight */
+    .fw-1 {
+        font-weight: 500;
+    }
+    .fw-2{
+        font-weight: 600;
+    }
+    .fw-3{
+        font-weight: 700;
+    }
+    /* Margin Classes */
+    .margintop10{
+        margin-top: 5px;
+    }
+    .margintop20{
+        margin-top:10px;
+    }
+    .margintop30{
+        margin-top:20px;
+    }
+    .margintop40{
+        margin-top:30px;
+    }
+}
+
+
+/* Styles for tablets (landscape) or small laptops */
+@media only screen and (min-width: 769px) and (max-width: 991px) {
+    .coverimg-text{
+        width: 70vw;
+        padding: 30px 20px;
+    } 
+    .coverimg .coverimg-text h1 {
+        font-size:25px;
+        top: 200px;
+        text-align: center;
+    }
+    /* All Sections Padding CSS */
+    .about-description{
+        padding: 25px 15px;
+    }
+    .dreamtime-section{
+        padding: 25px 15px;
+    }
+    .missionvisiondiv{
+        padding: 25px 15px;
+    }
+    /*Foundersection*/
+    .founder {
+	padding: 20px;
+	background: #fff;
+    }
+    .f-header-mobile{
+        display: block !important;
+    }
+    .wrap{
+    display:flex;
+    flex-direction: column;
+    gap:24px
+   }
+   .wrap *{
+    width: inherit;
+    grid-template-columns: 1fr
+   }
+   .content .name{
+       display: none !important;
+    }
+   .content .kicker{
+    display: none !important;
+   }
+   .content .lead{
+    display: none  !important;
+   }
+   
+   .name{
+        margin-bottom: 6px;
+    }
+   .kicker{
+    font-size: 13px;
+    margin-bottom: 6px;
+   }
+   .lead{
+    margin-bottom: 7px;
+   }
+   .bio{
+    margin-bottom: 10px;
+   }
+   .stats {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(60px, 1fr));
+    gap: 5px;
+   }
+   .stat .label {
+    font-size: 10px;
+   }
+   .media {
+		order: -1;
+	}
+   .media img{
+    height: 40vw;
+   }
+   /*Mission Vision CSS */
+    .missionvisiondbtn .btn{
+        width:100px;
+    }
+    /* Text Sizes */
+   .headingsize{
+        font-size:1.4rem;
+    }
+    .subheadingsize{
+        font-size: 1rem;
+    }
+    .paratextsize{
+        font-size: 0.8rem;
+    }
+    .subparatextsize{
+        font-size: 0.5rem;
+    }
+    /* Font Weight */
+    .fw-1 {
+        font-weight: 500;
+    }
+    .fw-2{
+        font-weight: 600;
+    }
+    .fw-3{
+        font-weight: 700;
+    }
+    .missionvisiondbtn .btn{
+        width:100px;
+    }
+}
+        
+/* Styles for desktops (medium size) */
+@media only screen and (min-width: 992px) and (max-width: 1440px) {
+    
+
+}
+
